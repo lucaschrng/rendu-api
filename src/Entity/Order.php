@@ -2,21 +2,37 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Metadata\ApiFilter;
+use ApiPlatform\Doctrine\Orm\Filter\DateFilter;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Patch;
+use ApiPlatform\Metadata\Post;
 use App\Repository\OrderRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Attribute\Groups;
+use function Symfony\Component\String\s;
 
 #[ApiResource(
+    operations: [
+        new Get(security: "is_granted('ROLE_SERVEUR') or is_granted('ROLE_BARMAN')"),
+        new GetCollection(),
+        new Patch(security: "is_granted('ROLE_SERVEUR') or is_granted('ROLE_BARMAN') and object.isNotPaid()"),
+        new Post(security: "is_granted('ROLE_SERVEUR')"),
+    ],
     normalizationContext: ['groups' => ['read']],
     denormalizationContext: ['groups' => ['write']],
     forceEager: false
 )]
 #[ORM\Entity(repositoryClass: OrderRepository::class)]
 #[ORM\Table(name: '`order`')]
+#[ApiFilter(DateFilter::class, properties: ['date'])]
+#[ApiFilter(SearchFilter::class, properties: ['status' => 'exact'])]
 class Order
 {
     #[ORM\Id]
@@ -28,6 +44,7 @@ class Order
      * @var Collection<int, Drink>
      */
     #[ORM\ManyToMany(targetEntity: Drink::class)]
+    #[Groups(['read', 'write'])]
     private Collection $drinks;
 
     #[ORM\Column]
@@ -54,7 +71,6 @@ class Order
     {
         $this->drinks = new ArrayCollection();
         $this->date = new \DateTime();
-        $this->status = 'en cours de préparation';
     }
 
     public function getId(): ?int
@@ -144,5 +160,10 @@ class Order
         $this->date = $date;
 
         return $this;
+    }
+
+    public function isNotPaid(): bool
+    {
+        return $this->status !== 'payée';
     }
 }

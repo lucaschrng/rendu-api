@@ -11,19 +11,23 @@ use Symfony\Component\Serializer\Attribute\Groups;
 use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\Post;
-use ApiPlatform\Metadata\Put;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Delete;
 use App\State\UserPasswordHasherProcessor;
 
 #[ApiResource(
     operations: [
-        new GetCollection(),
-        new Post(processor: UserPasswordHasherProcessor::class),
-        new Get(),
-        new Put(processor: UserPasswordHasherProcessor::class),
-        new Patch(processor: UserPasswordHasherProcessor::class),
-        new Delete(),
+        new GetCollection(security: "is_granted('ROLE_PATRON')"),
+        new Post(
+            security: "is_granted('ROLE_PATRON')",
+            processor: UserPasswordHasherProcessor::class
+        ),
+        new Get(security: "is_granted('ROLE_PATRON')"),
+        new Patch(
+            security: "is_granted('ROLE_PATRON')",
+            processor: UserPasswordHasherProcessor::class
+        ),
+        new Delete(security: "is_granted('ROLE_PATRON')")
     ],
     normalizationContext: ['groups' => ['read']],
     denormalizationContext: ['groups' => ['write']],

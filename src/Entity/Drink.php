@@ -13,15 +13,17 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ApiResource(
+    operations: [
+        new Get(security: "is_granted('ROLE_BARMAN')"),
+        new GetCollection(security: "is_granted('ROLE_BARMAN')"),
+        new Patch(security: "is_granted('ROLE_BARMAN')"),
+        new Delete(security: "is_granted('ROLE_BARMAN')"),
+        new Post(security: "is_granted('ROLE_BARMAN')"),
+    ],
     normalizationContext: ['groups' => ['read']],
     denormalizationContext: ['groups' => ['write']],
     forceEager: false
 )]
-#[Get()]
-#[GetCollection(security: "is_granted('ROLE_BARMAN')")]
-#[Patch(security: "is_granted('ROLE_BARMAN')")]
-#[Delete(security: "is_granted('ROLE_BARMAN')")]
-#[Post(security: "is_granted('ROLE_BARMAN')")]
 #[ORM\Entity(repositoryClass: DrinkRepository::class)]
 class Drink
 {
