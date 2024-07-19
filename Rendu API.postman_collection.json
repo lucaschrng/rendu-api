@@ -1,0 +1,707 @@
+{
+	"info": {
+		"_postman_id": "fbc045d2-2030-43cc-a93f-43dd9d8a202c",
+		"name": "Rendu API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24540200"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEzOTM0MzcsImV4cCI6MTcyMTM5NzAzNywicm9sZXMiOlsiUk9MRV9TRVJWRVVSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYmFydGVuZGVyMkBlbWFpbC5jb20iLCJmaXJzdG5hbWUiOm51bGx9.OlBO6kxJVF0xg_DKIsy28wPnavN1zl6NVAGaaUAtvdK8rqRIBn3qSyMZzaQoQ0XhM6h5TBH7Pt4RpHqajyAAMJPLAs0yjdWVEdkHA9w9kZdDRijtHnGiiU8ivV8o4cGDZBsigcujkGvQ_-fEhZKniUQlpRZrJ2GotEpXonvgPpEN6h0SNAKIqwz_L4auMi_gydEgxeepMsp3dRUyGSlr1E0T-FVyMjE1NBe-mlbdmQ21g4MIXYZXpivP30Jtt-uaJ-rYNHfwIe-sZWxob-uZphCOn_y_FPd6v2aHHFsVkYKvO5cnW19LGeBvHgjQuHYYA7KL5POqBjtf5O-N-zjCiA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/users",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEzOTM0MzcsImV4cCI6MTcyMTM5NzAzNywicm9sZXMiOlsiUk9MRV9TRVJWRVVSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYmFydGVuZGVyMkBlbWFpbC5jb20iLCJmaXJzdG5hbWUiOm51bGx9.OlBO6kxJVF0xg_DKIsy28wPnavN1zl6NVAGaaUAtvdK8rqRIBn3qSyMZzaQoQ0XhM6h5TBH7Pt4RpHqajyAAMJPLAs0yjdWVEdkHA9w9kZdDRijtHnGiiU8ivV8o4cGDZBsigcujkGvQ_-fEhZKniUQlpRZrJ2GotEpXonvgPpEN6h0SNAKIqwz_L4auMi_gydEgxeepMsp3dRUyGSlr1E0T-FVyMjE1NBe-mlbdmQ21g4MIXYZXpivP30Jtt-uaJ-rYNHfwIe-sZWxob-uZphCOn_y_FPd6v2aHHFsVkYKvO5cnW19LGeBvHgjQuHYYA7KL5POqBjtf5O-N-zjCiA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"string\",\r\n    \"plainPassword\": \"string\",\r\n    \"roles\": [\"ROLE_SERVEUR\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/users",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEzOTM0MzcsImV4cCI6MTcyMTM5NzAzNywicm9sZXMiOlsiUk9MRV9TRVJWRVVSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYmFydGVuZGVyMkBlbWFpbC5jb20iLCJmaXJzdG5hbWUiOm51bGx9.OlBO6kxJVF0xg_DKIsy28wPnavN1zl6NVAGaaUAtvdK8rqRIBn3qSyMZzaQoQ0XhM6h5TBH7Pt4RpHqajyAAMJPLAs0yjdWVEdkHA9w9kZdDRijtHnGiiU8ivV8o4cGDZBsigcujkGvQ_-fEhZKniUQlpRZrJ2GotEpXonvgPpEN6h0SNAKIqwz_L4auMi_gydEgxeepMsp3dRUyGSlr1E0T-FVyMjE1NBe-mlbdmQ21g4MIXYZXpivP30Jtt-uaJ-rYNHfwIe-sZWxob-uZphCOn_y_FPd6v2aHHFsVkYKvO5cnW19LGeBvHgjQuHYYA7KL5POqBjtf5O-N-zjCiA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/users/4",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEzOTM0MzcsImV4cCI6MTcyMTM5NzAzNywicm9sZXMiOlsiUk9MRV9TRVJWRVVSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYmFydGVuZGVyMkBlbWFpbC5jb20iLCJmaXJzdG5hbWUiOm51bGx9.OlBO6kxJVF0xg_DKIsy28wPnavN1zl6NVAGaaUAtvdK8rqRIBn3qSyMZzaQoQ0XhM6h5TBH7Pt4RpHqajyAAMJPLAs0yjdWVEdkHA9w9kZdDRijtHnGiiU8ivV8o4cGDZBsigcujkGvQ_-fEhZKniUQlpRZrJ2GotEpXonvgPpEN6h0SNAKIqwz_L4auMi_gydEgxeepMsp3dRUyGSlr1E0T-FVyMjE1NBe-mlbdmQ21g4MIXYZXpivP30Jtt-uaJ-rYNHfwIe-sZWxob-uZphCOn_y_FPd6v2aHHFsVkYKvO5cnW19LGeBvHgjQuHYYA7KL5POqBjtf5O-N-zjCiA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/users/9",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a user",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEzOTM0MzcsImV4cCI6MTcyMTM5NzAzNywicm9sZXMiOlsiUk9MRV9TRVJWRVVSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYmFydGVuZGVyMkBlbWFpbC5jb20iLCJmaXJzdG5hbWUiOm51bGx9.OlBO6kxJVF0xg_DKIsy28wPnavN1zl6NVAGaaUAtvdK8rqRIBn3qSyMZzaQoQ0XhM6h5TBH7Pt4RpHqajyAAMJPLAs0yjdWVEdkHA9w9kZdDRijtHnGiiU8ivV8o4cGDZBsigcujkGvQ_-fEhZKniUQlpRZrJ2GotEpXonvgPpEN6h0SNAKIqwz_L4auMi_gydEgxeepMsp3dRUyGSlr1E0T-FVyMjE1NBe-mlbdmQ21g4MIXYZXpivP30Jtt-uaJ-rYNHfwIe-sZWxob-uZphCOn_y_FPd6v2aHHFsVkYKvO5cnW19LGeBvHgjQuHYYA7KL5POqBjtf5O-N-zjCiA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/merge-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"new@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/users/8",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medias",
+			"item": [
+				{
+					"name": "Get medias",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create a media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEzOTM0MzcsImV4cCI6MTcyMTM5NzAzNywicm9sZXMiOlsiUk9MRV9TRVJWRVVSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYmFydGVuZGVyMkBlbWFpbC5jb20iLCJmaXJzdG5hbWUiOm51bGx9.OlBO6kxJVF0xg_DKIsy28wPnavN1zl6NVAGaaUAtvdK8rqRIBn3qSyMZzaQoQ0XhM6h5TBH7Pt4RpHqajyAAMJPLAs0yjdWVEdkHA9w9kZdDRijtHnGiiU8ivV8o4cGDZBsigcujkGvQ_-fEhZKniUQlpRZrJ2GotEpXonvgPpEN6h0SNAKIqwz_L4auMi_gydEgxeepMsp3dRUyGSlr1E0T-FVyMjE1NBe-mlbdmQ21g4MIXYZXpivP30Jtt-uaJ-rYNHfwIe-sZWxob-uZphCOn_y_FPd6v2aHHFsVkYKvO5cnW19LGeBvHgjQuHYYA7KL5POqBjtf5O-N-zjCiA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/charo/Downloads/Charli_XCX_-_Brat_(album_cover).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/medias",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"medias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEzOTM0MzcsImV4cCI6MTcyMTM5NzAzNywicm9sZXMiOlsiUk9MRV9TRVJWRVVSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYmFydGVuZGVyMkBlbWFpbC5jb20iLCJmaXJzdG5hbWUiOm51bGx9.OlBO6kxJVF0xg_DKIsy28wPnavN1zl6NVAGaaUAtvdK8rqRIBn3qSyMZzaQoQ0XhM6h5TBH7Pt4RpHqajyAAMJPLAs0yjdWVEdkHA9w9kZdDRijtHnGiiU8ivV8o4cGDZBsigcujkGvQ_-fEhZKniUQlpRZrJ2GotEpXonvgPpEN6h0SNAKIqwz_L4auMi_gydEgxeepMsp3dRUyGSlr1E0T-FVyMjE1NBe-mlbdmQ21g4MIXYZXpivP30Jtt-uaJ-rYNHfwIe-sZWxob-uZphCOn_y_FPd6v2aHHFsVkYKvO5cnW19LGeBvHgjQuHYYA7KL5POqBjtf5O-N-zjCiA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/medias/1",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"medias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEzOTM0MzcsImV4cCI6MTcyMTM5NzAzNywicm9sZXMiOlsiUk9MRV9TRVJWRVVSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYmFydGVuZGVyMkBlbWFpbC5jb20iLCJmaXJzdG5hbWUiOm51bGx9.OlBO6kxJVF0xg_DKIsy28wPnavN1zl6NVAGaaUAtvdK8rqRIBn3qSyMZzaQoQ0XhM6h5TBH7Pt4RpHqajyAAMJPLAs0yjdWVEdkHA9w9kZdDRijtHnGiiU8ivV8o4cGDZBsigcujkGvQ_-fEhZKniUQlpRZrJ2GotEpXonvgPpEN6h0SNAKIqwz_L4auMi_gydEgxeepMsp3dRUyGSlr1E0T-FVyMjE1NBe-mlbdmQ21g4MIXYZXpivP30Jtt-uaJ-rYNHfwIe-sZWxob-uZphCOn_y_FPd6v2aHHFsVkYKvO5cnW19LGeBvHgjQuHYYA7KL5POqBjtf5O-N-zjCiA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/medias/1",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"medias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Drinks",
+			"item": [
+				{
+					"name": "Get drinks",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create a drink",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEzOTM0MzcsImV4cCI6MTcyMTM5NzAzNywicm9sZXMiOlsiUk9MRV9TRVJWRVVSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYmFydGVuZGVyMkBlbWFpbC5jb20iLCJmaXJzdG5hbWUiOm51bGx9.OlBO6kxJVF0xg_DKIsy28wPnavN1zl6NVAGaaUAtvdK8rqRIBn3qSyMZzaQoQ0XhM6h5TBH7Pt4RpHqajyAAMJPLAs0yjdWVEdkHA9w9kZdDRijtHnGiiU8ivV8o4cGDZBsigcujkGvQ_-fEhZKniUQlpRZrJ2GotEpXonvgPpEN6h0SNAKIqwz_L4auMi_gydEgxeepMsp3dRUyGSlr1E0T-FVyMjE1NBe-mlbdmQ21g4MIXYZXpivP30Jtt-uaJ-rYNHfwIe-sZWxob-uZphCOn_y_FPd6v2aHHFsVkYKvO5cnW19LGeBvHgjQuHYYA7KL5POqBjtf5O-N-zjCiA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Mojito\",\r\n  \"price\": 8.0,\r\n  \"media\": \"/api/medias/2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/drinks",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"drinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a drink",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a drink",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEzOTM0MzcsImV4cCI6MTcyMTM5NzAzNywicm9sZXMiOlsiUk9MRV9TRVJWRVVSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYmFydGVuZGVyMkBlbWFpbC5jb20iLCJmaXJzdG5hbWUiOm51bGx9.OlBO6kxJVF0xg_DKIsy28wPnavN1zl6NVAGaaUAtvdK8rqRIBn3qSyMZzaQoQ0XhM6h5TBH7Pt4RpHqajyAAMJPLAs0yjdWVEdkHA9w9kZdDRijtHnGiiU8ivV8o4cGDZBsigcujkGvQ_-fEhZKniUQlpRZrJ2GotEpXonvgPpEN6h0SNAKIqwz_L4auMi_gydEgxeepMsp3dRUyGSlr1E0T-FVyMjE1NBe-mlbdmQ21g4MIXYZXpivP30Jtt-uaJ-rYNHfwIe-sZWxob-uZphCOn_y_FPd6v2aHHFsVkYKvO5cnW19LGeBvHgjQuHYYA7KL5POqBjtf5O-N-zjCiA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/drinks/1",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a drink",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEzOTM0MzcsImV4cCI6MTcyMTM5NzAzNywicm9sZXMiOlsiUk9MRV9TRVJWRVVSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYmFydGVuZGVyMkBlbWFpbC5jb20iLCJmaXJzdG5hbWUiOm51bGx9.OlBO6kxJVF0xg_DKIsy28wPnavN1zl6NVAGaaUAtvdK8rqRIBn3qSyMZzaQoQ0XhM6h5TBH7Pt4RpHqajyAAMJPLAs0yjdWVEdkHA9w9kZdDRijtHnGiiU8ivV8o4cGDZBsigcujkGvQ_-fEhZKniUQlpRZrJ2GotEpXonvgPpEN6h0SNAKIqwz_L4auMi_gydEgxeepMsp3dRUyGSlr1E0T-FVyMjE1NBe-mlbdmQ21g4MIXYZXpivP30Jtt-uaJ-rYNHfwIe-sZWxob-uZphCOn_y_FPd6v2aHHFsVkYKvO5cnW19LGeBvHgjQuHYYA7KL5POqBjtf5O-N-zjCiA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/merge-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"price\": 7.9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/drinks/2",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"drinks",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Get ongoing orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjE0MDE5MTMsImV4cCI6MTcyMTQwNTUxMywicm9sZXMiOlsiUk9MRV9TRVJWRVVSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYmFydGVuZGVyMkBlbWFpbC5jb20iLCJmaXJzdG5hbWUiOm51bGx9.OZMfqTOKsgFoNmnTvtEJf_8IvhaHQJfRBJSaOwD7XVv1Zi8z8Fik55_lLXQldP0yyhtacgOv2MqfNwWur-xAYXPWcdHsFRHQH7N75HUnU3R8VOiC1WTMIvS8cjErqfNx2-5rUjZvjpVachNDuVk3ySM0OVkbXrAKPOWbUtstQCRv-EvFmRpR7VmUzezKJLtRBW1nTayVs16awfWJWILcR5AG3Bb0wRc1Y57UIX1_bzxqWMw68i7gRhSvseIuKkN6EvQYGJtIkAV-r1jySCdaV3Mw7f9ZCpXwQ4eYzUx6ux77zY0S1K-O536MQGPo_IiBf2cJVgxO4hCUVjUHEgXlCQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/orders?date[strictly_after]=2020-07-19&date[strictly_before]=2021-07-19",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "date[strictly_after]",
+									"value": "2020-07-19"
+								},
+								{
+									"key": "date[strictly_before]",
+									"value": "2021-07-19"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get orders between two dates Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjE0MDE5MTMsImV4cCI6MTcyMTQwNTUxMywicm9sZXMiOlsiUk9MRV9TRVJWRVVSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYmFydGVuZGVyMkBlbWFpbC5jb20iLCJmaXJzdG5hbWUiOm51bGx9.OZMfqTOKsgFoNmnTvtEJf_8IvhaHQJfRBJSaOwD7XVv1Zi8z8Fik55_lLXQldP0yyhtacgOv2MqfNwWur-xAYXPWcdHsFRHQH7N75HUnU3R8VOiC1WTMIvS8cjErqfNx2-5rUjZvjpVachNDuVk3ySM0OVkbXrAKPOWbUtstQCRv-EvFmRpR7VmUzezKJLtRBW1nTayVs16awfWJWILcR5AG3Bb0wRc1Y57UIX1_bzxqWMw68i7gRhSvseIuKkN6EvQYGJtIkAV-r1jySCdaV3Mw7f9ZCpXwQ4eYzUx6ux77zY0S1K-O536MQGPo_IiBf2cJVgxO4hCUVjUHEgXlCQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/orders?date[strictly_after]=2020-07-19&date[strictly_before]=2021-07-19",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "date[strictly_after]",
+									"value": "2020-07-19"
+								},
+								{
+									"key": "date[strictly_before]",
+									"value": "2021-07-19"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create an order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEzOTcyMjIsImV4cCI6MTcyMTQwMDgyMiwicm9sZXMiOlsiUk9MRV9TRVJWRVVSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYmFydGVuZGVyMkBlbWFpbC5jb20iLCJmaXJzdG5hbWUiOm51bGx9.bjo4jAFP_I7cJydnDNddWQMbkLmkTkUkW86atWSBUVAWGeeXrSdrnAYChztiVRQR_kGfrAU8KVdcYkx2L-aWWCB9XnJOCor30luvAtt_gtZ-1Uvmdse7xVFQvT5T7awARLGng6MfnKKx82okx0i_DcmMW_Ai43TMDAtCksUioO19zBZ3FR_ohhNnQ0VRQ5rl-H9g2DjBEm2J-57cYOSxmXFskWCRUrnNKunZH40pUzH-uKe2ebgAaOnOpcsygKkG8atC95NZzuf2ahDuJt9ucv3wZf4jRnSvG2VuBxePQ1wjHJNa9TAp3isECocgIxytT9dds69v3ryVraUmXVeD9A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tableNumber\": 0,\r\n  \"drinks\": [\"/api/drinks/2\"],\r\n  \"waiter\": \"/api/users/8\",\r\n  \"bartender\": \"/api/users/7\",\r\n  \"status\": \"en cours de préparation\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/orders",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get an order",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update an order",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEzOTcyMjIsImV4cCI6MTcyMTQwMDgyMiwicm9sZXMiOlsiUk9MRV9TRVJWRVVSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYmFydGVuZGVyMkBlbWFpbC5jb20iLCJmaXJzdG5hbWUiOm51bGx9.bjo4jAFP_I7cJydnDNddWQMbkLmkTkUkW86atWSBUVAWGeeXrSdrnAYChztiVRQR_kGfrAU8KVdcYkx2L-aWWCB9XnJOCor30luvAtt_gtZ-1Uvmdse7xVFQvT5T7awARLGng6MfnKKx82okx0i_DcmMW_Ai43TMDAtCksUioO19zBZ3FR_ohhNnQ0VRQ5rl-H9g2DjBEm2J-57cYOSxmXFskWCRUrnNKunZH40pUzH-uKe2ebgAaOnOpcsygKkG8atC95NZzuf2ahDuJt9ucv3wZf4jRnSvG2VuBxePQ1wjHJNa9TAp3isECocgIxytT9dds69v3ryVraUmXVeD9A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/merge-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"drinks\": [\"/api/drinks/2\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/orders/1",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
