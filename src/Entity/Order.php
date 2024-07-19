@@ -8,8 +8,13 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
-#[ApiResource()]
+#[ApiResource(
+    normalizationContext: ['groups' => ['read']],
+    denormalizationContext: ['groups' => ['write']],
+    forceEager: false
+)]
 #[ORM\Entity(repositoryClass: OrderRepository::class)]
 #[ORM\Table(name: '`order`')]
 class Order
@@ -26,23 +31,30 @@ class Order
     private Collection $drinks;
 
     #[ORM\Column]
+    #[Groups(['read', 'write'])]
     private ?int $tableNumber = null;
 
     #[ORM\ManyToOne]
+    #[Groups(['read', 'write'])]
     private ?User $waiter = null;
 
     #[ORM\ManyToOne]
+    #[Groups(['read', 'write'])]
     private ?User $bartender = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['read', 'write'])]
     private ?string $status = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Groups(['read'])]
     private ?\DateTimeInterface $date = null;
 
     public function __construct()
     {
         $this->drinks = new ArrayCollection();
+        $this->date = new \DateTime();
+        $this->status = 'en cours de préparation';
     }
 
     public function getId(): ?int
